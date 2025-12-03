@@ -1,0 +1,226 @@
+No files changed, compilation skipped
+Traces:
+  [3101342] DeployNinjaLabsNFT::run()
+    ├─ [0] VM::envUint("PRIVATE_KEY") [staticcall]
+    │   └─ ← [Return] <env var value>
+    ├─ [0] VM::envOr("ORACLE_ADDRESS", DefaultSender: [0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38]) [staticcall]
+    │   └─ ← [Return] <env var value>
+    ├─ [0] VM::envOr("UPGRADER_ADDRESS", DefaultSender: [0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38]) [staticcall]
+    │   └─ ← [Return] <env var value>
+    ├─ [0] VM::envOr("TREASURY_ADDRESS", DefaultSender: [0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38]) [staticcall]
+    │   └─ ← [Return] <env var value>
+    ├─ [0] VM::envOr("MAX_SUPPLY", 200) [staticcall]
+    │   └─ ← [Return] <env var value>
+    ├─ [0] VM::envOr("MAX_PER_WALLET", 1) [staticcall]
+    │   └─ ← [Return] <env var value>
+    ├─ [0] VM::envOr("BASE_URI", "https://api.ninjalabs.xyz/metadata/") [staticcall]
+    │   └─ ← [Return] <env var value>
+    ├─ [0] VM::envOr("TIER1_THRESHOLD", 100) [staticcall]
+    │   └─ ← [Return] <env var value>
+    ├─ [0] VM::envOr("TIER2_THRESHOLD", 500) [staticcall]
+    │   └─ ← [Return] <env var value>
+    ├─ [0] console::log("=== Ninja Labs NFT Deployment ===") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::addr(<pk>) [staticcall]
+    │   └─ ← [Return] 0xCF0927cEDaa5710725990150F64da2ecf19Da42E
+    ├─ [0] console::log("Deployer:", 0xCF0927cEDaa5710725990150F64da2ecf19Da42E) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] console::log("Max Supply:", 200) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] console::log("Max Per Wallet:", 5) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] console::log("Base URI:", "https://api.ninjalabs.xyz/metadata/") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] console::log("Tier 1 Threshold:", 100) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] console::log("Tier 2 Threshold:", 500) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] console::log("") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] console::log("=== Role Addresses ===") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] console::log("Oracle:", DefaultSender: [0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] console::log("Upgrader:", DefaultSender: [0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] console::log("Treasury:", DefaultSender: [0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] console::log("") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::startBroadcast(<pk>)
+    │   └─ ← [Return] 
+    ├─ [2861303] → new NinjaLabsNFT@0xA085ce18AbdfA8945D817542F2Aa2C5304b7eD1a
+    │   ├─ emit RoleGranted(role: 0x0000000000000000000000000000000000000000000000000000000000000000, account: 0xCF0927cEDaa5710725990150F64da2ecf19Da42E, sender: 0xCF0927cEDaa5710725990150F64da2ecf19Da42E)
+    │   ├─ emit RoleGranted(role: 0x68e79a7bf1e0bc45d0a330c573bc367f9cf464fd326078812f301165fbda4ef1, account: 0xCF0927cEDaa5710725990150F64da2ecf19Da42E, sender: 0xCF0927cEDaa5710725990150F64da2ecf19Da42E)
+    │   ├─ emit RoleGranted(role: 0x189ab7a9244df0848122154315af71fe140f3db0fe014031783b0946b8c9d2e3, account: 0xCF0927cEDaa5710725990150F64da2ecf19Da42E, sender: 0xCF0927cEDaa5710725990150F64da2ecf19Da42E)
+    │   ├─ emit RoleGranted(role: 0xe1dcbdb91df27212a29bc27177c840cf2f819ecf2187432e1fac86c2dd5dfca9, account: 0xCF0927cEDaa5710725990150F64da2ecf19Da42E, sender: 0xCF0927cEDaa5710725990150F64da2ecf19Da42E)
+    │   └─ ← [Return] 12578 bytes of code
+    ├─ [0] console::log("=== Deployment Successful ===") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] console::log("Contract Address:", NinjaLabsNFT: [0xA085ce18AbdfA8945D817542F2Aa2C5304b7eD1a]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] console::log("") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::addr(<pk>) [staticcall]
+    │   └─ ← [Return] 0xCF0927cEDaa5710725990150F64da2ecf19Da42E
+    ├─ [197] NinjaLabsNFT::ORACLE_ROLE() [staticcall]
+    │   └─ ← [Return] 0x68e79a7bf1e0bc45d0a330c573bc367f9cf464fd326078812f301165fbda4ef1
+    ├─ [27419] NinjaLabsNFT::grantRole(0x68e79a7bf1e0bc45d0a330c573bc367f9cf464fd326078812f301165fbda4ef1, DefaultSender: [0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38])
+    │   ├─ emit RoleGranted(role: 0x68e79a7bf1e0bc45d0a330c573bc367f9cf464fd326078812f301165fbda4ef1, account: DefaultSender: [0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38], sender: 0xCF0927cEDaa5710725990150F64da2ecf19Da42E)
+    │   └─ ← [Stop] 
+    ├─ [0] console::log("Granted ORACLE_ROLE to:", DefaultSender: [0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::addr(<pk>) [staticcall]
+    │   └─ ← [Return] 0xCF0927cEDaa5710725990150F64da2ecf19Da42E
+    ├─ [1341] NinjaLabsNFT::UPGRADER_ROLE() [staticcall]
+    │   └─ ← [Return] 0x189ab7a9244df0848122154315af71fe140f3db0fe014031783b0946b8c9d2e3
+    ├─ [27419] NinjaLabsNFT::grantRole(0x189ab7a9244df0848122154315af71fe140f3db0fe014031783b0946b8c9d2e3, DefaultSender: [0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38])
+    │   ├─ emit RoleGranted(role: 0x189ab7a9244df0848122154315af71fe140f3db0fe014031783b0946b8c9d2e3, account: DefaultSender: [0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38], sender: 0xCF0927cEDaa5710725990150F64da2ecf19Da42E)
+    │   └─ ← [Stop] 
+    ├─ [0] console::log("Granted UPGRADER_ROLE to:", DefaultSender: [0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::addr(<pk>) [staticcall]
+    │   └─ ← [Return] 0xCF0927cEDaa5710725990150F64da2ecf19Da42E
+    ├─ [1099] NinjaLabsNFT::TREASURY_ROLE() [staticcall]
+    │   └─ ← [Return] 0xe1dcbdb91df27212a29bc27177c840cf2f819ecf2187432e1fac86c2dd5dfca9
+    ├─ [27419] NinjaLabsNFT::grantRole(0xe1dcbdb91df27212a29bc27177c840cf2f819ecf2187432e1fac86c2dd5dfca9, DefaultSender: [0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38])
+    │   ├─ emit RoleGranted(role: 0xe1dcbdb91df27212a29bc27177c840cf2f819ecf2187432e1fac86c2dd5dfca9, account: DefaultSender: [0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38], sender: 0xCF0927cEDaa5710725990150F64da2ecf19Da42E)
+    │   └─ ← [Stop] 
+    ├─ [0] console::log("Granted TREASURY_ROLE to:", DefaultSender: [0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] console::log("") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] console::log("=== Deployment Complete ===") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] console::log("Next Steps:") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] console::log("1. Verify contract on block explorer") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] console::log("2. Set mint status: setMintActive(true)") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] console::log("3. Upload metadata to IPFS") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] console::log("4. Update base URI if needed") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] console::log("5. Test minting on testnet") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::stopBroadcast()
+    │   └─ ← [Return] 
+    ├─ [0] VM::toString(NinjaLabsNFT: [0xA085ce18AbdfA8945D817542F2Aa2C5304b7eD1a]) [staticcall]
+    │   └─ ← [Return] "0xA085ce18AbdfA8945D817542F2Aa2C5304b7eD1a"
+    ├─ [0] VM::toString(DefaultSender: [0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38]) [staticcall]
+    │   └─ ← [Return] "0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38"
+    ├─ [0] VM::toString(DefaultSender: [0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38]) [staticcall]
+    │   └─ ← [Return] "0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38"
+    ├─ [0] VM::toString(DefaultSender: [0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38]) [staticcall]
+    │   └─ ← [Return] "0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38"
+    ├─ [0] VM::toString(DefaultSender: [0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38]) [staticcall]
+    │   └─ ← [Return] "0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38"
+    ├─ [1246] NinjaLabsNFT::maxSupply() [staticcall]
+    │   └─ ← [Return] 200
+    ├─ [0] VM::toString(200) [staticcall]
+    │   └─ ← [Return] "200"
+    ├─ [872] NinjaLabsNFT::tier1Threshold() [staticcall]
+    │   └─ ← [Return] 100
+    ├─ [0] VM::toString(100) [staticcall]
+    │   └─ ← [Return] "100"
+    ├─ [366] NinjaLabsNFT::tier2Threshold() [staticcall]
+    │   └─ ← [Return] 500
+    ├─ [0] VM::toString(500) [staticcall]
+    │   └─ ← [Return] "500"
+    ├─ [0] console::log("") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] console::log("=== Deployment Info ===") [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] console::log("{\n  \"contract\": \"0xA085ce18AbdfA8945D817542F2Aa2C5304b7eD1a\",\n  \"deployer\": \"0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38\",\n  \"oracle\": \"0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38\",\n  \"upgrader\": \"0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38\",\n  \"treasury\": \"0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38\",\n  \"maxSupply\": 200,\n  \"tier1Threshold\": 100,\n  \"tier2Threshold\": 500\n}") [staticcall]
+    │   └─ ← [Stop] 
+    └─ ← [Return] 
+
+
+Script ran successfully.
+
+== Logs ==
+  === Ninja Labs NFT Deployment ===
+  Deployer: 0xCF0927cEDaa5710725990150F64da2ecf19Da42E
+  Max Supply: 200
+  Max Per Wallet: 5
+  Base URI: https://api.ninjalabs.xyz/metadata/
+  Tier 1 Threshold: 100
+  Tier 2 Threshold: 500
+  
+  === Role Addresses ===
+  Oracle: 0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38
+  Upgrader: 0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38
+  Treasury: 0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38
+  
+  === Deployment Successful ===
+  Contract Address: 0xA085ce18AbdfA8945D817542F2Aa2C5304b7eD1a
+  
+  Granted ORACLE_ROLE to: 0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38
+  Granted UPGRADER_ROLE to: 0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38
+  Granted TREASURY_ROLE to: 0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38
+  
+  === Deployment Complete ===
+  Next Steps:
+  1. Verify contract on block explorer
+  2. Set mint status: setMintActive(true)
+  3. Upload metadata to IPFS
+  4. Update base URI if needed
+  5. Test minting on testnet
+  
+  === Deployment Info ===
+  {
+  "contract": "0xA085ce18AbdfA8945D817542F2Aa2C5304b7eD1a",
+  "deployer": "0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38",
+  "oracle": "0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38",
+  "upgrader": "0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38",
+  "treasury": "0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38",
+  "maxSupply": 200,
+  "tier1Threshold": 100,
+  "tier2Threshold": 500
+}
+
+## Setting up 1 EVM.
+==========================
+Simulated On-chain Traces:
+
+  [2861303] → new NinjaLabsNFT@0xA085ce18AbdfA8945D817542F2Aa2C5304b7eD1a
+    ├─ emit RoleGranted(role: 0x0000000000000000000000000000000000000000000000000000000000000000, account: 0xCF0927cEDaa5710725990150F64da2ecf19Da42E, sender: 0xCF0927cEDaa5710725990150F64da2ecf19Da42E)
+    ├─ emit RoleGranted(role: 0x68e79a7bf1e0bc45d0a330c573bc367f9cf464fd326078812f301165fbda4ef1, account: 0xCF0927cEDaa5710725990150F64da2ecf19Da42E, sender: 0xCF0927cEDaa5710725990150F64da2ecf19Da42E)
+    ├─ emit RoleGranted(role: 0x189ab7a9244df0848122154315af71fe140f3db0fe014031783b0946b8c9d2e3, account: 0xCF0927cEDaa5710725990150F64da2ecf19Da42E, sender: 0xCF0927cEDaa5710725990150F64da2ecf19Da42E)
+    ├─ emit RoleGranted(role: 0xe1dcbdb91df27212a29bc27177c840cf2f819ecf2187432e1fac86c2dd5dfca9, account: 0xCF0927cEDaa5710725990150F64da2ecf19Da42E, sender: 0xCF0927cEDaa5710725990150F64da2ecf19Da42E)
+    └─ ← [Return] 12578 bytes of code
+
+  [29419] NinjaLabsNFT::grantRole(0x68e79a7bf1e0bc45d0a330c573bc367f9cf464fd326078812f301165fbda4ef1, DefaultSender: [0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38])
+    ├─ emit RoleGranted(role: 0x68e79a7bf1e0bc45d0a330c573bc367f9cf464fd326078812f301165fbda4ef1, account: DefaultSender: [0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38], sender: 0xCF0927cEDaa5710725990150F64da2ecf19Da42E)
+    └─ ← [Stop] 
+
+  [29419] NinjaLabsNFT::grantRole(0x189ab7a9244df0848122154315af71fe140f3db0fe014031783b0946b8c9d2e3, DefaultSender: [0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38])
+    ├─ emit RoleGranted(role: 0x189ab7a9244df0848122154315af71fe140f3db0fe014031783b0946b8c9d2e3, account: DefaultSender: [0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38], sender: 0xCF0927cEDaa5710725990150F64da2ecf19Da42E)
+    └─ ← [Stop] 
+
+  [29419] NinjaLabsNFT::grantRole(0xe1dcbdb91df27212a29bc27177c840cf2f819ecf2187432e1fac86c2dd5dfca9, DefaultSender: [0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38])
+    ├─ emit RoleGranted(role: 0xe1dcbdb91df27212a29bc27177c840cf2f819ecf2187432e1fac86c2dd5dfca9, account: DefaultSender: [0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38], sender: 0xCF0927cEDaa5710725990150F64da2ecf19Da42E)
+    └─ ← [Stop] 
+
+
+==========================
+
+Chain 2424
+
+Estimated gas price: 0.002000001 gwei
+
+Estimated total gas used for script: 4322770
+
+Estimated amount required: 0.00000864554432277 ETH
+
+==========================
+
+Transactions saved to: C:/Users/Ricky/Documents/Project/NinjaLabs/NinjaNFTContract/broadcast\DeployNinjaLabsNFT.s.sol\2424\run-latest.json
+
+Sensitive values saved to: C:/Users/Ricky/Documents/Project/NinjaLabs/NinjaNFTContract/cache\DeployNinjaLabsNFT.s.sol\2424\run-latest.json
+
+Error: Failed to send transaction
+
+Context:
+- server returned an error response: error code -32000: insufficient funds for gas * price + value: address 0xCF0927cEDaa5710725990150F64da2ecf19Da42E have 0 want 8194842097419

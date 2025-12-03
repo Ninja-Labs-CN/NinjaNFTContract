@@ -2,10 +2,10 @@
 pragma solidity ^0.8.21;
 
 import "forge-std/Test.sol";
-import "../src/NinjaLabsGenesisNFT.sol";
+import "../src/NINJ4NFT.sol";
 
-contract NinjaLabsGenesisNFTTest is Test {
-    NinjaLabsGenesisNFT internal genesis;
+contract NINJ4NFTTest is Test {
+    NINJ4NFT internal genesis;
 
     address internal minter = address(0xA11CE);
     address internal other = address(0xB0B);
@@ -14,19 +14,19 @@ contract NinjaLabsGenesisNFTTest is Test {
     uint256 internal constant MAX_SUPPLY = 2;
 
     function setUp() public {
-        genesis = new NinjaLabsGenesisNFT(MAX_SUPPLY, BASE_URI);
+        genesis = new NINJ4NFT(MAX_SUPPLY, BASE_URI);
     }
 
     function testConstructorRejectsZeroSupply() public {
-        vm.expectRevert(NinjaLabsGenesisNFT.InvalidMaxSupply.selector);
-        new NinjaLabsGenesisNFT(0, BASE_URI);
+        vm.expectRevert(NINJ4NFT.InvalidMaxSupply.selector);
+        new NINJ4NFT(0, BASE_URI);
     }
 
     function testMintRequiresBalanceGreaterThanOneInj() public {
         vm.deal(minter, 1 ether);
 
         vm.prank(minter);
-        vm.expectRevert(NinjaLabsGenesisNFT.InsufficientNativeBalance.selector);
+        vm.expectRevert(NINJ4NFT.InsufficientNativeBalance.selector);
         genesis.mint();
     }
 
@@ -47,7 +47,7 @@ contract NinjaLabsGenesisNFTTest is Test {
 
         vm.startPrank(minter);
         genesis.mint();
-        vm.expectRevert(NinjaLabsGenesisNFT.AlreadyMinted.selector);
+        vm.expectRevert(NINJ4NFT.AlreadyMinted.selector);
         genesis.mint();
         vm.stopPrank();
     }
@@ -65,7 +65,7 @@ contract NinjaLabsGenesisNFTTest is Test {
         address extra = address(0xC0FFEE);
         vm.deal(extra, 2 ether);
         vm.prank(extra);
-        vm.expectRevert(NinjaLabsGenesisNFT.MaxSupplyReached.selector);
+        vm.expectRevert(NINJ4NFT.MaxSupplyReached.selector);
         genesis.mint();
     }
 
@@ -106,7 +106,7 @@ contract NinjaLabsGenesisNFTTest is Test {
         recipients[1] = other;
         recipients[2] = address(0xC0FFEE);
 
-        vm.expectRevert(NinjaLabsGenesisNFT.MaxSupplyReached.selector);
+        vm.expectRevert(NINJ4NFT.MaxSupplyReached.selector);
         genesis.airdrop(recipients);
     }
 
@@ -117,6 +117,23 @@ contract NinjaLabsGenesisNFTTest is Test {
 
         genesis.setBaseURI("ipfs://updated/");
 
-        assertEq(genesis.tokenURI(1), "ipfs://updated/1");
+        assertEq(genesis.tokenURI(1), "ipfs://updated/1.json");
+    }
+
+    function testDefaultRoyaltyIsFivePercent() public {
+        (address receiver, uint256 royaltyAmount) = genesis.royaltyInfo(1, 1 ether);
+        assertEq(receiver, address(this));
+        assertEq(royaltyAmount, 0.05 ether);
+    }
+
+    function testOwnerCanUpdateRoyalty() public {
+        genesis.setRoyalty(other, 750); // 7.5%
+        (address receiver, uint256 amount) = genesis.royaltyInfo(1, 2 ether);
+        assertEq(receiver, other);
+        assertEq(amount, 0.15 ether);
+    }
+
+    function testSupportsERC2981Interface() public {
+        assertTrue(genesis.supportsInterface(0x2a55205a));
     }
 }

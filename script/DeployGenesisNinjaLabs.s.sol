@@ -2,15 +2,15 @@
 pragma solidity ^0.8.21;
 
 import "forge-std/Script.sol";
-import "../src/NinjaLabsGenesisNFT.sol";
+import "../src/NINJ4NFT.sol";
 
 /// @title DeployGenesisNinjaLabs
 /// @notice Deploys the NinjaLabsGenesisNFT contract using Foundry scripts
 contract DeployGenesisNinjaLabs is Script {
-    uint256 internal constant DEFAULT_GENESIS_MAX_SUPPLY = 1000;
-    string internal constant DEFAULT_GENESIS_BASE_URI = "https://api.ninjalabs.xyz/genesis/";
+    uint256 internal constant DEFAULT_GENESIS_MAX_SUPPLY = 500;
+    string internal constant DEFAULT_GENESIS_BASE_URI = "";
 
-    NinjaLabsGenesisNFT public genesis;
+    NINJ4NFT public genesis;
 
     function run() external {
         uint256 deployerPrivateKey = vm.envUint("PRIVATE_KEY");
@@ -23,7 +23,7 @@ contract DeployGenesisNinjaLabs is Script {
         console.log("Base URI:", baseURI);
 
         vm.startBroadcast(deployerPrivateKey);
-        genesis = new NinjaLabsGenesisNFT(maxSupply, baseURI);
+        genesis = new NINJ4NFT(maxSupply, baseURI);
         vm.stopBroadcast();
 
         console.log("Genesis contract deployed at:", address(genesis));
